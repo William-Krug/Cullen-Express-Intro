@@ -7,7 +7,12 @@ function onReady() {
 
   // Grab that data from the server
   // GET /allTheQuotes
+  fetchQuotes();
 
+  console.log('so much to do, so little time....');
+}
+
+function fetchQuotes() {
   // Use Ajax!
   // What is AJAX?
   // "Asynchronous JavaScript and XML"
@@ -29,7 +34,10 @@ function onReady() {
         // and render (.append()) to the DOM
         $('#quoteList').append(`
           <li>
-            <blockquote>"${quote.quote}" —${quote.author}</blockquote>
+            <blockquote>
+              "${quote.quote}"
+              —${quote.author}
+            </blockquote>
           </li>
         `);
       }
@@ -46,6 +54,4 @@ function onReady() {
   // }).then(function (response) {
   //   console.log('got a response:', response);
   // });
-
-  console.log('so much to do, so little time....');
 }

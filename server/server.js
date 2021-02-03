@@ -39,15 +39,30 @@ app.get('/quotes', function (req, res) {
 });
 
 // POST endpoint
+/**
+ * POST /quotes endpoint
+ *
+ * Accepts a body like:
+ *
+ * {
+ *  "quote_to_add": {
+ *    "quote": "Something smart",
+ *    "author": "Me (hopefully)"
+ *   }
+ * }
+ *
+ * Will add to list of quotes
+ */
 app.post('/quotes', (req, res) => {
   let quote = req.body.quote_to_add; // if ERROR "req.body is undefined", you are missing body-parser
   console.log(quote.author);
-  console.log(quote.quote);
+  console.log(quote.quote); // sends 200 {quote: '...', author: '...'}
 
   // ToDo: add to quotesData
   quotes.addQuote(quote);
   // ToDo: Respond with something!
-  res.sendStatus(200); // 204 = no content 401 = unathorized   406 = coffepot interface
+  res.sendStatus(200); // sends back "A-OK"
+  // 204 = no content 401 = unathorized   406 = coffepot interface
 });
 
 // If you see a EADDRINUSE error,

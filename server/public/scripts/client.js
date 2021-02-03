@@ -9,7 +9,26 @@ function onReady() {
   // GET /allTheQuotes
   fetchQuotes();
 
+  // Handle new quote form submit
+  $(document).on('submit', '#newQuoteForm', onSubmit);
+
   console.log('so much to do, so little time....');
+}
+
+function onSubmit(event) {
+  // Please don't reload... c'mon.
+  event.preventDefault();
+
+  console.log('onSubmit');
+
+  // Grab data from form inputs
+  const newQuote = {
+    quote: $('#quoteInput').val(),
+    author: $('#authorInput').val(),
+  };
+  console.log('newQuote:', newQuote);
+
+  $();
 }
 
 function fetchQuotes() {

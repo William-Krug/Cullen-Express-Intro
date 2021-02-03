@@ -31,12 +31,14 @@ app.listen(port, function () {
 
 // setting up a new route
 // you MUST end API with 'send' or 'end'
+// GET endpoint
 app.get('/quotes', function (req, res) {
   // "'/quotes'" is a resource (an address) of what you are going to look for
   console.log('GET Request for quotes');
   res.send(quotes.getNextQuote()); //
 });
 
+// POST endpoint
 app.post('/quotes', (req, res) => {
   let quote = req.body.quote_to_add; // if ERROR "req.body is undefined", you are missing body-parser
   console.log(quote.author);

@@ -28,7 +28,16 @@ function onSubmit(event) {
   };
   console.log('newQuote:', newQuote);
 
-  $();
+  // POST quote data to server
+  $.ajax({
+    data: {
+      quote_to_add: newQuote,
+    },
+    url: '/quotes',
+    method: 'POST',
+  }).then(function (response) {
+    console.log('Banana Yeah!!!');
+  });
 }
 
 function fetchQuotes() {

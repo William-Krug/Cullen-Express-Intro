@@ -32,8 +32,20 @@ app.listen(port, function () {
 // setting up a new route
 // you MUST end API with 'send' or 'end'
 app.get('/quotes', function (req, res) {
+  // "'/quotes'" is a resource (an address) of what you are going to look for
   console.log('GET Request for quotes');
   res.send(quotes.getNextQuote()); //
+});
+
+app.post('/quotes', (req, res) => {
+  let quote = req.body.quote_to_add; // if ERROR "req.body is undefined", you are missing body-parser
+  console.log(quote.author);
+  console.log(quote.quote);
+
+  // ToDo: add to quotesData
+  quotes.addQuote(quote);
+  // ToDo: Respond with something!
+  res.sendStatus(200); // 204 = no content 401 = unathorized   406 = coffepot interface
 });
 
 // If you see a EADDRINUSE error,

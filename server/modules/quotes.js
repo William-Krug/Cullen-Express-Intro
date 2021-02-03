@@ -47,4 +47,11 @@ function addQuote(quoteData) {
   return true;
 }
 
-module.exports = { getNextQuote, addQuote }; // short hand for module.exports = {getNextQuote: getNextQuote, addQuote: addQuote}
+// module.exports = { getNextQuote, addQuote };
+
+// short hand for
+module.exports = {
+  getNextQuote: getNextQuote,
+  addQuote: addQuote,
+  quoteList: quotesData,
+};

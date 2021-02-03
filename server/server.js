@@ -38,6 +38,17 @@ app.get('/quotes', function (req, res) {
   res.send(quotes.getNextQuote()); //
 });
 
+/**
+ * GET /allTheQuotes
+ *
+ * Return an array with all the quotes in it
+ */
+app.get('/allTheQuotes', function (req, res) {
+  console.log('GET Request for allTheQuotes');
+  // Send bak the entire list of quotes
+  res.send(quotes.quoteList);
+});
+
 app.get('/cool-things', function (req, res) {
   res.send('<h1>Cool things</h1>');
 });

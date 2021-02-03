@@ -38,6 +38,10 @@ app.get('/quotes', function (req, res) {
   res.send(quotes.getNextQuote()); //
 });
 
+app.get('/cool-things', function (req, res) {
+  res.send('<h1>Cool things</h1>');
+});
+
 // POST endpoint
 /**
  * POST /quotes endpoint

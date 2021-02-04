@@ -31,13 +31,18 @@ function onSubmit(event) {
   // POST quote data to server
   $.ajax({
     data: {
+      // this becomes req.body
       quote_to_add: newQuote,
     },
     url: '/quotes',
     method: 'POST',
-  }).then(function (response) {
-    console.log('Banana Yeah!!!');
-  });
+  })
+    .then(function (response) {
+      console.log('Banana Yeah!!!');
+    })
+    .catch(function (error) {
+      console.log('wah wah', error);
+    });
 }
 
 function fetchQuotes() {

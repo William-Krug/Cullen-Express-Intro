@@ -31,7 +31,7 @@ function onSubmit(event) {
   // POST quote data to server
   $.ajax({
     data: {
-      // this becomes req.body
+      // data becomes req.body
       quote_to_add: newQuote,
     },
     url: '/quotes',

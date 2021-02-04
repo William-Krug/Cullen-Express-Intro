@@ -77,7 +77,7 @@ app.post('/quotes', (req, res) => {
   quotes.addQuote(quote);
   // ToDo: Respond with something!
   res.sendStatus(200); // sends back "A-OK"
-  // 204 = no content 401 = unathorized   406 = coffepot interface
+  // 201 = created  204 = no content 401 = unathorized   406 = coffepot interface
 });
 
 // If you see a EADDRINUSE error,

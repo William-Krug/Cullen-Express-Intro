@@ -39,6 +39,11 @@ function onSubmit(event) {
   })
     .then(function (response) {
       console.log('Banana Yeah!!!');
+
+      // Go back to server
+      // GET /allTheQuotes again,
+      // and re-render
+      fetchQuotes();
     })
     .catch(function (error) {
       console.log('wah wah', error);

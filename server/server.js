@@ -69,6 +69,14 @@ app.get('/cool-things', function (req, res) {
  * Will add to list of quotes
  */
 app.post('/quotes', (req, res) => {
+  // Server-Side Validation
+  if (req.body.quote_to_add === undefined) {
+    console.log('oops, missing quote_to_add');
+    // 400 === "You messed up"
+    res.sendStatus(400);
+    return;
+  }
+
   let quote = req.body.quote_to_add; // if ERROR "req.body is undefined", you are missing body-parser
   console.log(quote.author);
   console.log(quote.quote); // sends 200 {quote: '...', author: '...'}

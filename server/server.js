@@ -54,6 +54,7 @@ app.get('/cool-things', function (req, res) {
 });
 
 // POST endpoint
+// use POST to save data on the server
 /**
  * POST /quotes endpoint
  *
